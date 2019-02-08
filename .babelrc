@@ -1,0 +1,4 @@
+{
+  "path": "~/node_modules/@babel/standalone",
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}

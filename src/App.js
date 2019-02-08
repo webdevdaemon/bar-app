@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React, { Suspense, lazy } from 'react'
+// import logo from './logo.svg'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import 'primereact/resources/themes/nova-dark/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
+import './App.css'
 
-export default App;
+const HomePage   = lazy(() => import('./Pages/HomePage'))
+const SearchPage = lazy(() => import('./Pages/SearchPage'))
+const SubmitPage = lazy(() => import('./Pages/SubmitPage'))
+
+const App = () => (
+  <Router>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/search" component={SearchPage} />
+        <Route path="/submit" component={SubmitPage}/>
+      </Switch>
+    </Suspense>
+  </Router>
+)
+
+export default App
