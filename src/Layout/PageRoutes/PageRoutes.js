@@ -1,18 +1,20 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import React, { Suspense, lazy } from 'react'
+import { BrowserRouter as Switch, Route } from 'react-router-dom'
 
-import HomePage from '../Pages/HomePage'
-import SearchPage from '../Pages/SearchPage'
-import SubmitPage from '../Pages/SubmitPage'
+const HomePage =   lazy(() => import('../../Pages/HomePage'))
+const SearchPage = lazy(() => import('../../Pages/SearchPage'))
+const SubmitPage = lazy(() => import('../../Pages/SubmitPage'))
 
-const PageRoutes = ({children, ...props}) => {
+const PageRoutes = ({ children }) => {
   return (
-    <BrowserRouter>
-      <Route path="/" component={HomePage}/>
-      <Route path="/search" component={SearchPage}/>
-      <Route path="/submit" component={SubmitPage}/>
-    </BrowserRouter>
+    <Suspense fallback={'Loading...'}>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/search" component={SearchPage} />
+        <Route path="/submit" component={SubmitPage} />
+      </Switch>
+    </Suspense>
   )
 }
 

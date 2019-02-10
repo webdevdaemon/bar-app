@@ -1,16 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const HomePage = ({children, ...props}) => {
-
+import PageWrapper from '../../Layout/PageWrapper/PageWrapper'
+const HomePage = () => {
+  
   return (
-    <div className="homepage">
-      {'_____ HomePage ______'}
-      {children}
-    </div>
+    <PageWrapper title="home">
+      <h1>{'HomePage Goes Here...'}</h1>
+    </PageWrapper>
   )
 }
-
-HomePage.propTypes = { children: PropTypes.node }
-
+HomePage.propTypes = {
+  match: PropTypes.object, history: PropTypes.object, location: PropTypes.object
+}
 export default HomePage
