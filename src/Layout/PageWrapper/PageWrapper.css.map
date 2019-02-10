@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,iBAAiB",
+    "sources": [
+        "PageWrapper.scss"
+    ],
+    "names": [],
+    "file": "PageWrapper.css"
+}
