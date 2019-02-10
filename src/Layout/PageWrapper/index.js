@@ -1,4 +1,4 @@
 import PageWrapper from './PageWrapper'
-import 'PageWrapper.css'
+import './PageWrapper.css'
 
 export default PageWrapper

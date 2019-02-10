@@ -1,18 +1,16 @@
 import PropTypes from 'prop-types'
-import React, { Suspense, lazy } from 'react'
-import { BrowserRouter as Switch, Route } from 'react-router-dom'
+import React, { Suspense } from 'react'
+import { BrowserRouter as Switch } from 'react-router-dom'
+import ROUTES from '../../nav-routes'
+import LazyRoute from '../../Components/LazyRoute'
 
-const HomePage =   lazy(() => import('../../Pages/HomePage'))
-const SearchPage = lazy(() => import('../../Pages/SearchPage'))
-const SubmitPage = lazy(() => import('../../Pages/SubmitPage'))
-
-const PageRoutes = ({ children }) => {
+const PageRoutes = props => {
   return (
     <Suspense fallback={'Loading...'}>
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/search" component={SearchPage} />
-        <Route path="/submit" component={SubmitPage} />
+        {ROUTES.map((r, i) => (
+          <LazyRoute {...r} key={`ID${r.path}`}/>
+        ))}
       </Switch>
     </Suspense>
   )
