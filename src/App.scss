@@ -1,4 +1,2 @@
-@import "/node_modules/@blueprintjs/core/lib/scss/variables";
-
-$colorDark: #282c34;
-
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "./_utils/style/_index.scss";

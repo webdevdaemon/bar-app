@@ -1,11 +1,13 @@
 // import logo from './logo.svg'
 import React from 'react'
-import AppUI from './Layout/AppUI'
-import { FocusStyleManager } from '@blueprintjs/core'
-import './App.css'
+import PageRoutes from './Layout/PageRoutes'
+import {BrowserRouter} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.min.css'
 
-FocusStyleManager.onlyShowFocusOnTabs()
-
-const App = () => <AppUI />
+const App = () =>
+  <BrowserRouter>  
+    <PageRoutes />
+  </BrowserRouter>
 
 export default App

@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,iBAAiB",
+    "mappings": "AAEA,AAAA,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,UAAU;EAC3B,WAAW,EAAE,OAAO;EAEpB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EAEV,SAAS,EAAG,KAAK;EACjB,SAAS,EAAG,KAAK;EACjB,UAAU,ECOI,IAAI;EDNlB,UAAU,ECMI,IAAI,GDHnB",
     "sources": [
-        "PageWrapper.scss"
+        "PageWrapper.scss",
+        "../../_utils/style/partials/_vars.scss"
     ],
     "names": [],
     "file": "PageWrapper.css"

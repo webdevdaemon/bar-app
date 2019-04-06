@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,YAAY",
+    "mappings": "AAEA,AAAA,OAAO,CAAC;EACN,MAAM,ECgBQ,GAAG,GDflB",
     "sources": [
-        "Header.scss"
+        "Header.scss",
+        "../../_utils/style/partials/_vars.scss"
     ],
     "names": [],
     "file": "Header.css"

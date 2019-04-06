@@ -1,21 +1,36 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
+import Head from 'react-helmet'
 import Header from '../Header/Header'
 import Footer from '../Footer/index'
 
-const PageWrapper = ({children, title, ...props}) => {
-
-  return (
-    <div className="pagewrapper">
-      <Header />
-      <main className={`page ${title}`}>
-        {children}
-      </main>     
-      <Footer />
-    </div>
+/**
+ * @description Re-usable Page Container w/MetaData, Header, NavMenu, & Footer
+ * included. 
+ * @param {*} props
+ * @returns
+ */
+const PageWrapper = props => {
+  
+  return !props.render ? (
+    <>
+      <Head title={props.title} />
+      <div className="pagewrapper">
+        <Header {...props} />
+        <main className={`page ${props.className}`}>
+          {props.children}
+        </main>     
+        <Footer />
+      </div>
+    </>
+  ) : (
+    <>
+      <Head title={props.title} />
+      <div className="pagewrapper">
+        {props.render()}
+      </div>
+    </>
   )
 }
-
-PageWrapper.propTypes = { children: PropTypes.node }
 
 export default PageWrapper

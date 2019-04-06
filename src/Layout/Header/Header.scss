@@ -1,3 +1,5 @@
-/* Header */
+@import "../../_utils/style/partials/vars";
 
-// .header {}
+.header {
+  height: $heightHeader;
+}

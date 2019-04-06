@@ -1,15 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PageWrapper from '../../Layout/PageWrapper/PageWrapper'
-const HomePage = () => {
+import PageWrapper from '../../Layout/PageWrapper'
+import Hero from '../../Components/Hero/Hero'
+
+const HomePage = props => {
   
   return (
-    <PageWrapper title="home">
-      <h1>{'HomePage Goes Here...'}</h1>
-    </PageWrapper>
+    <PageWrapper
+      {...props}
+      title="home"
+      render={
+        () => <Hero {...props}/>
+      }
+    />
   )
 }
+
 HomePage.propTypes = {
   match: PropTypes.object, history: PropTypes.object, location: PropTypes.object
 }
+
 export default HomePage

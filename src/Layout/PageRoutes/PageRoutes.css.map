@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,WAAW,CAAC,EACV,OAAO,EAAE,KAAK,GACf",
+    "mappings": "",
     "sources": [
         "PageRoutes.scss"
     ],

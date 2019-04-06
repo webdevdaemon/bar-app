@@ -1,3 +1,5 @@
-/* Footer */
+@import "../../_utils/style/partials/vars";
 
-// .footer {}
+.footer {
+  height: $heightFooter;
+}
