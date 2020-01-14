@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap'
+import RecipeCard from '../RecipeCard'
+import RecipeCardList from '../RecipeCardList'
+
 
 const AutoSuggestList = ({ results, ...props }) => {
-
-
 
   return (
     <ListGroup>

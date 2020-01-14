@@ -3,16 +3,16 @@ const routes = [{
     href: '/'
   }, {
     name: 'Search',
-    href: '/Search'
+    href: '/search'
   }, {
     name: 'Submit',
-    href: '/Submit'
+    href: '/submit'
   }, {
     name: 'Account',
-    href: '/Account'
+    href: '/account'
   }, {
     name: 'Browse',
-    href: '/Browse'
+    href: '/browse'
   }
 ]
 

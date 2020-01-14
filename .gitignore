@@ -28,3 +28,6 @@ yarn-error.log*
 **/*.min.css
 **/*.min.css.map
 **/*.css.map
+src/App.min.css.map
+PG.js
+src/App.test.js

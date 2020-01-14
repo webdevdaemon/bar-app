@@ -8,7 +8,7 @@ import Footer from '../Footer/index'
  * @description Re-usable Page Container w/MetaData, Header, NavMenu, & Footer
  * included. 
  * @param {*} props
- * @returns
+ * @returns ReactComponent
  */
 const PageWrapper = props => {
   
