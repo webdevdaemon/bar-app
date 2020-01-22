@@ -1,48 +1,56 @@
-import React, { useState, useEffect } from 'react'
-import getResultsList from '../../_utils/js/searchModule'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useState, useEffect} from 'react'
+import getResultsList from '../../utils/js/searchModule'
 import PageWrapper from '../../Layout/PageWrapper'
 import AutoSuggest from '../../Components/AutoSuggest/index'
-
-// getResultsList('l') // ?
+import {RecipeState} from '../../context'
 
 const SearchPage = props => {
-// search query state
+  // search query state
   const [query, setQuery] = useState('')
-  const handleChange = value => setQuery(value)
-
-// search results state
+  const handleChange = e => setQuery(e.target.value)
+  // search results state
   const [results, setResults] = useState([])
-  const updateResults = prom =>
-    !prom.then
-      ? setResults(prom)
-      : prom.then(res => { setResults(res) },
-          error => new Error(error, '@ SearchPage > updateResults'))
+  const [showModal, setShowModal] = useState(false)
 
-// update results on query change
+  // update results on query change
   useEffect(() => {
-    if (query.length > 3) {
+    if (query) {
       getResultsList(query).then(
-        results => updateResults(results),
-        error => new Error(error, '@ SearchPage > getResultsList'))
-      console.log('results @ SearchPage = ', results)
-    }}, [query])
+        r => setResults(r),
+        error => 
+          new Error(error.message + 
+            '\n\n@SearchPage > getResultsList'
+          ),
+        )
+      }
+    }, [query])
 
   return (
     <PageWrapper title="Recipe Search" className="search">
       <section className="section title">
-        <h2>{'Find That Recipe!'}</h2>
-        <p>{'Start Typing Below for a List of Possible Matches'}</p>
+        <h2>{`What'll ya have?`}</h2>
+        <p>
+          {`Start Typing Below to Begin Your Search...`}
+        </p>
       </section>
 
-      <section className="section controls">
-      </section>
-      
+      <section className="section controls"></section>
+
       <section className="section content">
-        <AutoSuggest
-          query={query}
-          results={results}
-          handleChange={handleChange}
-        />
+
+        <RecipeState.Provider 
+          value={{showModal, setShowModal}}
+        >
+
+          <AutoSuggest
+            query={query}
+            results={results}
+            handleChange={handleChange}
+            showModal={showModal}
+          />
+
+        </RecipeState.Provider>
       </section>
     </PageWrapper>
   )

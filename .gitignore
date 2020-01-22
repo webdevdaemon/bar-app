@@ -22,12 +22,28 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# *.min.css
-# *.min.css.map
-# *.css.map
+*.min.css
+*.min.css.map
+*.css.map
 **/*.min.css
 **/*.min.css.map
 **/*.css.map
 src/App.min.css.map
 PG.js
 src/App.test.js
+
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+### Sass ###
+.sass-cache/
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.history

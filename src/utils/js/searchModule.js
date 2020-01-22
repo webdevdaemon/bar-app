@@ -29,5 +29,5 @@ export default (function() {
         .then(out => out)
     }
   
-  return autoSearch
+  return (x) => autoSearch(x)
 })()

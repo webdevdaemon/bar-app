@@ -1,41 +1,31 @@
-import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
-import { Route } from 'react-router-dom'
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, NavLink, /*NavbarBrand*/ } from 'reactstrap'
-import { NAV_LINKS } from '../../nav-links'
+import React, {useState} from 'react'
+import {NavLink, useRouteMatch} from 'react-router-dom'
+import {NAV_LINKS} from '../../nav-links'
+import Navbar from 'react-bootstrap/Navbar'
 
 export default props => {
+  const [isCollapsed, setIsCollapsed] = useState(true)
+  const toggleMenu = () => setIsCollapsed(!isCollapsed)
 
-  const [isOpen, setIsOpen] = useState(false)
-  const toggle = () => setIsOpen(!isOpen)
+  const match = useRouteMatch('/:_pathname')
 
-  const renderNavLink = ({ label, href, id }) => (
-    <NavItem id={id} key={id}>
-      <NavLink className="cm-nav-link" href={href}>{label}</NavLink>
-    </NavItem>
+  const renderNavLink = ({label, to, id}) => (
+    <NavLink id={id} key={to} to={to} className="cm-nav-link">
+      {label}
+    </NavLink>
   )
 
   return (
-    <Route
-      path={null}
-      render={
-        ({ match, location, history }) =>
-          <Navbar
-            style={{ display: 'flex', justifyContent: 'center' }}
-            color="dark"
-            dark
-          >
-            <NavbarToggler onClick={toggle} className="mr-2" size="lg" />
-            <Collapse isOpen={isOpen} navbar>
-              <Nav navbar>
-                {NAV_LINKS.map(({ href, label }, i) =>
-                  renderNavLink({ href, label, id: `nav-link-${i}` }))}
-              </Nav>
-            </Collapse>
-          </Navbar>
-      }
-    />
+    <Navbar>
+      <ul className="nav-links">
+        {NAV_LINKS.map(({to, label}) =>
+          renderNavLink({to, label, id: `nav-link-${label}`}),
+        )}
+        <button onClick={toggleMenu} className="mr-2">
+          
+        </button>
+      </ul>
+    </Navbar>
   )
-} 
-
-// export default NB
+}

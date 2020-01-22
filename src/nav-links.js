@@ -1,8 +1,8 @@
 const NAV_LINKS = [
-  {label: 'Home', href: '/'},
-  {label: 'Find', href: '/search'},
-  {label: 'Browse', href: '/browse'},
-  {label: 'Add', href: '/submit'},
-]       
+  {label: 'Home', to: '/'},
+  {label: 'Find', to: '/search'},
+  {label: 'Browse', to: '/browse'},
+  {label: 'Add', to: '/submit'},
+]
 
-export { NAV_LINKS }
+export {NAV_LINKS}

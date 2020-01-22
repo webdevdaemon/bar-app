@@ -1,13 +1,22 @@
-'use strict';
-import React from 'react';
-import Styled from "./styles";
+/** @jsx jsx */
+import {css, jsx} from '@emotion/core'
+import React from 'react'
 
-const RecipeCardList = _ => { 
+const RecipeCardList = ({children}) => {
   return (
-    <React.Fragment>
-      Test content
-    </React.Fragment>
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100vw;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      `}
+    >
+      {children}
+    </div>
   )
 }
 
-export default RecipeCardList;
+export default RecipeCardList

@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const AutoSuggestResult = ({children, ...props}) => {
+const AutoSuggestResult = ({children}) => {
 
   return (
     <div className="autosuggestresult">
-      {'_____ AutoSuggestResult ______'}
+      {children}
     </div>
   )
 }

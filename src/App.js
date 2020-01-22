@@ -1,13 +1,17 @@
-// import logo from './logo.svg'
 import React from 'react'
 import PageRoutes from './Layout/PageRoutes'
 import {BrowserRouter} from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.min.css'
+import {AppState} from './context'
 
-const App = () =>
-  <BrowserRouter>  
-    <PageRoutes />
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+
+const App = () => (
+  <BrowserRouter>
+    <AppState.Provider>
+      <PageRoutes />
+    </AppState.Provider>
   </BrowserRouter>
+)
 
 export default App

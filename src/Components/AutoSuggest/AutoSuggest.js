@@ -1,6 +1,4 @@
 import React from 'react'
-import { FormGroup } from 'reactstrap'
-
 import AutoSuggestInput from '../AutoSuggestInput'
 import AutoSuggestList from '../AutoSuggestList'
 
@@ -10,10 +8,8 @@ const AutoSuggest = ({ handleChange, query, results }) => {
 
   return (
     <div className="autosuggest">
-      <FormGroup>
-        <AutoSuggestInput query={query} handleChange={handleChange} />
-        <AutoSuggestList results={results} />  
-      </FormGroup>
+      <AutoSuggestInput query={query} handleChange={handleChange} />
+      <AutoSuggestList results={results} />  
     </div>
   )
 }

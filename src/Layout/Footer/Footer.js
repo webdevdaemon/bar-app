@@ -1,15 +1,16 @@
+/** @jsx jsx */
+import {css, jsx} from '@emotion/core'
 import React from 'react'
-// import PropTypes from 'prop-types'
 
-const Footer = props => {
+const __footer_size = '10vh'
+
+const Footer = ({children}) => {
 
   return (
-    <footer className="footer">
-      {'_____ Footer ______'}
+    <footer css={css`height: ${__footer_size}`}>
+      {children}
     </footer>
   )
 }
-
-// Footer.propTypes = {}
 
 export default Footer
